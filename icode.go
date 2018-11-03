@@ -21,17 +21,16 @@
 package main
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"os"
 	"strconv"
 
-	"encoding/json"
-
+	"github.com/it-chain/learn-icode/say" //여기 이렇게 에러난다
 	"github.com/it-chain/sdk"
 	"github.com/it-chain/sdk/logger"
 	"github.com/it-chain/sdk/pb"
-	"github.com/jessevdk/go-flags"
 )
 
 var opts struct {
@@ -39,6 +38,8 @@ var opts struct {
 }
 
 func main() {
+
+	say.PrintEngine()
 
 	logger.EnableFileLogger(true, "./icode.log")
 	parser := flags.NewParser(&opts, flags.Default)
